@@ -1,0 +1,31 @@
+// assets/styles/collection/_colors.scss
+
+// Светлая тема — строгие серо-синие тона
+$theme-light: (
+  primary:    #2C3E50, // тёмно-стальной
+  secondary:  #7F8C8D, // средний серый
+  accent:     #2980B9, // спокойный синий акцент
+  bg:         #ECF0F1, // очень светлый серый
+  text:       #2C3E50  // насыщенный тёмно-синий/серый
+);
+
+// Тёмная тема — глубокие холодные оттенки
+$theme-dark: (
+  primary:    #1C2833, // почти чёрный синий
+  secondary:  #566573, // холодный графит
+  accent:     #85C1E9, // небесно-синий выделение
+  bg:         #212F3D, // темно-синий
+  text:       #F8F9F9  // светло-серый для текста
+);
+
+:root {
+  @each $name, $color in $theme-light {
+    --#{$name}: #{$color};
+  }
+}
+
+[data-theme='dark'] {
+  @each $name, $color in $theme-dark {
+    --#{$name}: #{$color};
+  }
+}
